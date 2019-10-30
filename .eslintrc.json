@@ -1,15 +1,60 @@
 {
-  "extends": "vaadin",
-  "env": {
-    "browser": true,
-    "node": true,
-    "es6": true
-  },
-  "plugins": [
-    "html"
+  "extends": [
+    "airbnb-base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "plugin:lit/all",
+    "plugin:wc/recommended",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint"
   ],
-  "globals": {
-    "Polymer": false,
-    "Vaadin": false
-  }
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2018,
+    "project": "./tsconfig.json"
+  },
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "import/extensions": "off",
+    "import/prefer-default-export": "off",
+    "class-methods-use-this": "off",
+    "no-console": [ "error", { "allow": ["warn"] } ],
+    "no-underscore-dangle": "off"
+  },
+  "overrides": [
+    {
+      "files": [ "test/unit/*.test.ts" ],
+      "env": {
+        "mocha": true
+      },
+      "globals": {
+        "chai": false,
+        "sinon": false
+      },
+      "rules": {
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "no-unused-expressions": "off"
+      }
+    },
+    {
+      "files": [ "test/visual/test.js" ],
+      "globals": {
+        "gemini": false
+      }
+    },
+    {
+      "files": [ "karma.conf.js" ],
+      "env": {
+        "node": true
+      }
+    }
+  ]
 }

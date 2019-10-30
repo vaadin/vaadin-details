@@ -1,3 +1,16 @@
 {
-  "extends": "stylelint-config-vaadin"
+  "processors": [
+    [
+      "stylelint-processor-styled-components",
+      {
+        "moduleName": "@vaadin/vaadin-themable-mixin",
+        "importName": "css",
+        "strict": true
+      }
+    ]
+  ],
+  "extends": [
+    "stylelint-config-vaadin",
+    "stylelint-config-styled-components"
+  ]
 }

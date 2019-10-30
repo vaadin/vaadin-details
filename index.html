@@ -5,10 +5,14 @@
     <title>vaadin-details</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="../iron-component-page/iron-component-page.html">
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
   </head>
   <body>
-    <iron-component-page src="vaadin-details.html"></iron-component-page>
+    <api-viewer src="custom-elements.json"></api-viewer>
+
+    <script type="module">
+      import './vaadin-details.js';
+      import 'api-viewer-element';
+    </script>
   </body>
 </html>
