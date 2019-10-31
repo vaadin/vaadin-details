@@ -1,6 +1,6 @@
 import { fixture, html } from '@open-wc/testing-helpers';
 import { keyDownOn } from '@polymer/iron-test-helpers/mock-interactions.js';
-import { VaadinDetails } from '../../src/vaadin-details';
+import { VaadinDetails } from '../../src/vaadin-details.js';
 
 const { expect } = chai;
 const { sinon } = window;
