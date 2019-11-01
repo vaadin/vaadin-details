@@ -28,8 +28,15 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
   },
   "scripts": {
     "build": "ttsc",
@@ -41,6 +48,7 @@
     "prestart": "wca analyze src/vaadin-details.ts --format json --outFile custom-elements.json",
     "start": "es-dev-server --file-extensions .ts --node-resolve --babel --watch --port 3000 --open",
     "test": "karma start",
+    "test:debug": "karma start --single-run false --browsers Chrome",
     "test:sauce": "cross-env TEST_PLATFORM=sauce karma start",
     "test:visual": "npm run build && gemini test test/visual"
   },

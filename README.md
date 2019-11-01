@@ -70,7 +70,9 @@ To use the Material theme, import the correspondent file from the `theme/materia
 
 ## Running tests from the command line
 
-1. When in the `vaadin-details` directory, run `npm test`
+- When in the `vaadin-details` directory, run `npm test`
+
+- To debug tests in the browser, run `npm run test:debug`
 
 
 ## Following the coding style
