@@ -80,6 +80,13 @@ describe('details', () => {
       expect(details.opened).to.equal(false);
     });
 
+    it('should not update `opened` on click when disabled', async () => {
+      details.disabled = true;
+      await details.updateComplete;
+      toggle.click();
+      expect(details.opened).to.equal(false);
+    });
+
     it('should hide the content when `opened` is false', () => {
       const style = getComputedStyle(content);
       expect(style.display).to.equal('none');

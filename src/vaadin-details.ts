@@ -45,7 +45,7 @@ export class VaadinDetails extends ControlStateMixin(VaadinElement) {
         overflow: hidden;
       }
 
-      [part='summary'][disabled] {
+      :host([disabled]) [part='summary'] {
         pointer-events: none;
       }
 
@@ -104,6 +104,9 @@ export class VaadinDetails extends ControlStateMixin(VaadinElement) {
   }
 
   private _onToggleClick() {
+    if (this.disabled) {
+      return;
+    }
     this.opened = !this.opened;
   }
 
