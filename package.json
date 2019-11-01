@@ -32,18 +32,17 @@
     }
   },
   "scripts": {
-    "build": "tsc",
+    "build": "ttsc",
     "gemini": "gemini update test/visual",
     "lint": "npm-run-all --parallel lint:*",
     "lint:css": "stylelint src/*.ts theme/**/*.ts test/*.ts",
     "lint:js": "eslint src theme test --ext .ts --ignore-path .gitignore",
     "lint:lit": "lit-analyzer src --strict",
-    "postinstall": "npm run build",
     "prestart": "wca analyze src/vaadin-details.ts --format json --outFile custom-elements.json",
-    "start": "es-dev-server --node-resolve --port 3000 --open",
+    "start": "es-dev-server --file-extensions .ts --node-resolve --babel --watch --port 3000 --open",
     "test": "karma start",
     "test:sauce": "cross-env TEST_PLATFORM=sauce karma start",
-    "test:visual": "gemini test test/visual"
+    "test:visual": "npm run build && gemini test test/visual"
   },
   "dependencies": {
     "@vaadin/control-state-mixin": "^0.1.0",
@@ -69,6 +68,7 @@
     "@types/mocha": "^5.2.7",
     "@types/sinon": "^7.5.0",
     "@types/sinon-chai": "3.2.3",
+    "@zoltu/typescript-transformer-append-js-extension": "^1.0.1",
     "@webcomponents/webcomponentsjs": "^2.3.0",
     "api-viewer-element": "^0.2.0",
     "chai": "^4.2.0",
@@ -101,6 +101,8 @@
     "sinon-chai": "^3.3.0",
     "stylelint": "^11.1.1",
     "stylelint-config-vaadin": "^0.2.0",
+    "ts-node": "^8.4.1",
+    "ttypescript": "^1.5.7",
     "typescript": "^3.6.4",
     "web-component-analyzer": "^0.1.18"
   }

@@ -1,2 +1,3 @@
-import './vaadin-details-styles.js';
-import '../../src/vaadin-details.js';
+/* eslint-disable import/extensions */
+import './vaadin-details-styles';
+import '../../src/vaadin-details';

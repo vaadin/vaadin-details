@@ -1,1 +1,2 @@
-import './theme/lumo/vaadin-details.js';
+/* eslint-disable import/extensions */
+import './theme/lumo/vaadin-details';

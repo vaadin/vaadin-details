@@ -13,7 +13,13 @@
     "noFallthroughCasesInSwitch": true,
     "strict": true,
     "experimentalDecorators": true,
-    "importHelpers": true
+    "importHelpers": true,
+    "plugins": [
+      {
+        "transform": "@zoltu/typescript-transformer-append-js-extension/output/index.js",
+        "after": true
+      }
+    ]
   },
   "include": [
     "vaadin-details.ts",

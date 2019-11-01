@@ -119,19 +119,7 @@ module.exports = function(config) {
         '**/node_modules/mocha/**/*',
         '**/node_modules/chai/**/*',
         '**/node_modules/sinon/chai/**/*'
-      ],
-      customBabelConfig: {
-        plugins: [
-          [
-            '@babel/plugin-proposal-decorators',
-            {
-              decoratorsBeforeExport: true
-            }
-          ],
-          '@babel/plugin-proposal-class-properties'
-        ],
-        presets: ['@babel/preset-typescript']
-      }
+      ]
     }
   });
 
