@@ -3321,10 +3321,10 @@ eslint-config-prettier@^6.5.0:
   dependencies:
     get-stdin "^6.0.0"
 
-eslint-config-vaadin@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-vaadin/-/eslint-config-vaadin-0.3.0.tgz#e0b9637b53322bb100033f761fb048a4ae122898"
-  integrity sha512-moROIOl8QYlzuct6iter4T51S5Bg2B1k5p58QqIj6+uC+/C/g/xWH+SWJWQz7LBLqmjFQK8PHN3awTo6pNGH/w==
+eslint-config-vaadin@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-vaadin/-/eslint-config-vaadin-0.3.1.tgz#86a69c39a8db6507ce8d76ec588390c5adfff711"
+  integrity sha512-JRKNDvGBWRtZjfciKXpl23abHIyUAxEaFAZwautGj7hUquHCVcg0+GNtwUGkwF0HQ5QtaJcfbkoBWM3b7nUSow==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^2.6.0"
     "@typescript-eslint/parser" "^2.6.0"

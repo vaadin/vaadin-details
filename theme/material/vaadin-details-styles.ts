@@ -1,4 +1,3 @@
-/* eslint-disable import/extensions */
 import { registerStyles } from '@vaadin/vaadin-themable-mixin/register-styles.js';
 import { materialDetails } from './vaadin-details-css';
 

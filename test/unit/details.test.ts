@@ -1,6 +1,6 @@
 import { fixture, html } from '@open-wc/testing-helpers';
 import { keyDownOn } from '@polymer/iron-test-helpers/mock-interactions.js';
-import { VaadinDetails } from '../../src/vaadin-details'; // eslint-disable-line import/extensions
+import { VaadinDetails } from '../../src/vaadin-details';
 
 const { expect } = chai;
 const { sinon } = window;
