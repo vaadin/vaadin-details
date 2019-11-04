@@ -54,11 +54,11 @@
   },
   "dependencies": {
     "@vaadin/control-state-mixin": "^0.1.0",
-    "@vaadin/element-base": "^0.1.1",
-    "@vaadin/themable-element": "^0.1.1",
+    "@vaadin/element-base": "^0.1.2",
+    "@vaadin/themable-element": "^0.1.2",
     "@vaadin/vaadin-lumo-styles": "^1.5.0",
     "@vaadin/vaadin-material-styles": "^1.2.3",
-    "@vaadin/vaadin-themable-mixin": "1.5.1",
+    "@vaadin/vaadin-themable-mixin": "^1.5.2",
     "lit-element": "^2.0.0",
     "lit-html": "^1.0.0",
     "tslib": "^1.10.0"

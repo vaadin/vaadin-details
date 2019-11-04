@@ -1033,23 +1033,23 @@
     lit-element "^2.0.0"
     lit-html "^1.0.0"
 
-"@vaadin/element-base@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@vaadin/element-base/-/element-base-0.1.1.tgz#40ca71698bf383b55ed7691f07e41b53b3dfe207"
-  integrity sha512-ncrmmiqIeiVUHugmZyTw56s0E2Q0kt8jInWG9vWLrV3lk/ro/i8r8M4AlcnkSVe4eFoFmfX9J/BPbkwICusLHg==
+"@vaadin/element-base@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@vaadin/element-base/-/element-base-0.1.2.tgz#893ae1182ff0dd72a91fa421ca21992d46af603e"
+  integrity sha512-J12XnbV024gJLtOP9RLCTH3DqjkyvwhWg9JjSn9DGURZw0lvlnvSES3fpRwgq0baw2LFDw5KoPBqB3Nc6V5gvQ==
   dependencies:
     "@polymer/polymer" "^3.3.0"
-    "@vaadin/themable-element" "^0.1.1"
+    "@vaadin/themable-element" "^0.1.2"
     "@vaadin/vaadin-element-mixin" "^2.1.4"
     lit-element "^2.0.0"
 
-"@vaadin/themable-element@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@vaadin/themable-element/-/themable-element-0.1.1.tgz#d25a0debc670173aa70b5a19049982d75fe586c1"
-  integrity sha512-XH1jJ0xTMyZyvEX7blc1TagtXwfvfQDEicq55xvztLezs6gb7wSqzOEwzlWgpA0DTUb/SN7f3GBRdPpcA3e92w==
+"@vaadin/themable-element@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@vaadin/themable-element/-/themable-element-0.1.2.tgz#ccfebc36b532daa12395df2fe13529c6ec0a7290"
+  integrity sha512-XCqhUmPfPOJszDiUUPu2HV768L5Jq+rxUayJ5yCTYmBrEF/ZTbziLVS/CLuYvo9Zgyd10CddKybOra0WVEK91w==
   dependencies:
     "@polymer/polymer" "^3.3.0"
-    "@vaadin/vaadin-themable-mixin" "^1.5.1"
+    "@vaadin/vaadin-themable-mixin" "^1.5.2"
     lit-element "^2.0.0"
     lit-html "^1.0.0"
 
@@ -1083,12 +1083,13 @@
   dependencies:
     "@polymer/polymer" "^3.0.0"
 
-"@vaadin/vaadin-themable-mixin@1.5.1", "@vaadin/vaadin-themable-mixin@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-themable-mixin/-/vaadin-themable-mixin-1.5.1.tgz#4b74625987ac350ba2083d3e0387518febd5f7b9"
-  integrity sha512-wZIafKCeLaQw5v0EmrgXG4okyMeX4EhyGp192AXjLmJttzxViq0JF2YFGxDM80PcoA30q1P2PW0VLtrJNp5btg==
+"@vaadin/vaadin-themable-mixin@^1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-themable-mixin/-/vaadin-themable-mixin-1.5.2.tgz#3fc4ec1180f8032c8025fe70053deacbeffd7f62"
+  integrity sha512-3EsVOhE5lo/nRyX27+nOyPNsV5TtKInTKirldUqucGZZtcyWT4ZxqAxswIz3bAolnb17UDb8eJKHOH6ERMLEhg==
   dependencies:
     "@polymer/polymer" "^3.0.0"
+    lit-element "^2.0.0"
 
 "@vaadin/vaadin-usage-statistics@^2.0.4":
   version "2.0.11"
