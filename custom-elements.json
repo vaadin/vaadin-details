@@ -4,7 +4,7 @@
     {
       "name": "vaadin-details",
       "description": "`<vaadin-details>` is a Web Component creating an expandable panel\nsimilar to `<details>` HTML element.",
-      "jsDoc": "/**\n * `<vaadin-details>` is a Web Component creating an expandable panel\n * similar to `<details>` HTML element.\n *\n * @element vaadin-details\n *\n * @slot - Slot fot the collapsible details content.\n * @slot summary - Slot for the summary content.\n *\n * @attr {Boolean} focused - Set when the element is focused.\n * @attr {Boolean} focus-ring - Set when the element is focused using the keyboard.\n *\n * @fires opened-changed - Fired when the `opened` property changes.\n */",
+      "jsDoc": "/**\n * `<vaadin-details>` is a Web Component creating an expandable panel\n * similar to `<details>` HTML element.\n *\n * @element vaadin-details\n *\n * @slot - Slot fot the collapsible details content.\n * @slot summary - Slot for the summary content.\n *\n * @attr {Boolean} focused - Set when the element is focused.\n * @attr {Boolean} focus-ring - Set when the element is focused using the keyboard.\n *\n * @csspart toggle - The element used as indicator, can represent an icon.\n * @csspart summary-content - The wrapper for the slotted summary content.\n * @csspart summary - The element used to open and close collapsible content.\n * @csspart content - The wrapper for the collapsible details content.\n *\n * @fires opened-changed - Fired when the `opened` property changes.\n */",
       "attributes": [
         {
           "name": "focused",
@@ -47,7 +47,24 @@
           "description": "Slot fot the collapsible details content."
         }
       ],
-      "cssProperties": []
+      "cssParts": [
+        {
+          "name": "content",
+          "description": "The wrapper for the collapsible details content."
+        },
+        {
+          "name": "summary",
+          "description": "The element used to open and close collapsible content."
+        },
+        {
+          "name": "summary-content",
+          "description": "The wrapper for the slotted summary content."
+        },
+        {
+          "name": "toggle",
+          "description": "The element used as indicator, can represent an icon."
+        }
+      ]
     }
   ]
 }
