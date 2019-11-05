@@ -831,7 +831,7 @@
   dependencies:
     "@polymer/polymer" "^3.0.0"
 
-"@polymer/iron-test-helpers@3.0.1":
+"@polymer/iron-test-helpers@^3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@polymer/iron-test-helpers/-/iron-test-helpers-3.0.1.tgz#ec2b9c6567e2967a191b3d800a04b1167b2d1394"
   integrity sha512-2R7dnGcW2eg95i7LhYWWUO4AlAk6qXsPnKoyeN2R1t0km0ECMx0jjwqeLwCo8/7LwuVPZSiarI4DK7jyU7fJLQ==
@@ -1066,6 +1066,56 @@
     "@vaadin/vaadin-themable-mixin" "^1.5.2"
     lit-element "^2.0.0"
     lit-html "^1.0.0"
+
+"@vaadin/vaadin-component-dev-dependencies@vaadin/vaadin-component-dev-dependencies#812619c":
+  version "3.1.0"
+  resolved "https://codeload.github.com/vaadin/vaadin-component-dev-dependencies/tar.gz/812619c523f7733ed1c76fa2153fa1ffa7e443bb"
+  dependencies:
+    "@babel/core" "^7.7.0"
+    "@babel/plugin-proposal-class-properties" "^7.7.0"
+    "@babel/plugin-proposal-decorators" "^7.7.0"
+    "@babel/preset-typescript" "^7.7.0"
+    "@open-wc/karma-esm" "^2.9.6"
+    "@types/chai" "^4.2.4"
+    "@types/expect" "^1.20.4"
+    "@types/mocha" "^5.2.7"
+    "@types/sinon" "^7.5.0"
+    "@types/sinon-chai" "3.2.3"
+    "@webcomponents/webcomponentsjs" "^2.3.0"
+    api-viewer-element "^0.2.1"
+    chai "^4.2.0"
+    coveralls "^3.0.7"
+    cross-env "^6.0.3"
+    deepmerge "^4.2.2"
+    es-dev-server "^1.23.0"
+    eslint "^6.6.0"
+    eslint-config-vaadin "^0.3.1"
+    gemini "^7.5.1"
+    gemini-esm "^0.1.0"
+    gemini-sauce "^1.0.2"
+    husky "^3.0.9"
+    karma "^4.4.1"
+    karma-chrome-launcher "^3.1.0"
+    karma-coverage-istanbul-reporter "^2.1.0"
+    karma-firefox-launcher "^1.2.0"
+    karma-mocha "^1.3.0"
+    karma-mocha-reporter "^2.2.5"
+    karma-sauce-launcher "^2.0.2"
+    karma-sinon-chai "^2.0.2"
+    karma-source-map-support "^1.4.0"
+    lint-staged "^9.4.2"
+    lit-analyzer "^1.1.9"
+    magi-cli "^0.24.0"
+    mocha "^6.2.2"
+    npm-run-all "^4.1.5"
+    prettier "1.18.2"
+    replace-in-file "^4.2.0"
+    sinon "^7.5.0"
+    sinon-chai "^3.3.0"
+    stylelint "^11.1.1"
+    stylelint-config-vaadin "^0.2.1"
+    typescript "^3.6.4"
+    web-component-analyzer "^0.1.20"
 
 "@vaadin/vaadin-development-mode-detector@^2.0.0":
   version "2.0.4"
@@ -2831,6 +2881,11 @@ deepmerge@^3.2.0:
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-3.3.0.tgz#d3c47fd6f3a93d517b14426b0628a17b0125f5f7"
   integrity sha512-GRQOafGHwMHpjPx9iCvTgpu9NojZ49q794EEL94JVEw6VaeA8XTUyBKvAkOOjBX9oJNiV6G3P+T+tihFjo2TqA==
 
+deepmerge@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
+  integrity sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==
+
 default-require-extensions@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/default-require-extensions/-/default-require-extensions-2.0.0.tgz#f5f8fbb18a7d6d50b21f641f649ebb522cfe24f7"
@@ -3090,9 +3145,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.295:
-  version "1.3.302"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.302.tgz#4c7ba3d56166507a56f7eb603fdde1ed701f5ac8"
-  integrity sha512-1qConyiVEbj4xZRBXqtGR003+9tV0rJF0PS6aeO0Ln/UL637js9hdwweCl07meh/kJoI2N4W8q3R3g3F5z46ww==
+  version "1.3.303"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.303.tgz#3059bcc39c1c3b492ca381d577b6a49b5050085e"
+  integrity sha512-xDFPmMjJ0gQBsVwspB0bjcbFn3MVcvU0sxXYmh1UMbZ6rDogQVM3vSyOvTO4rym1KlnJIU6nqzK3qs0yKudmjw==
 
 elegant-spinner@^1.0.1:
   version "1.0.1"
