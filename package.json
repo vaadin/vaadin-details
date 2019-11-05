@@ -19,6 +19,7 @@
   },
   "homepage": "https://vaadin.com/components",
   "files": [
+    "/vaadin-*.ts",
     "/vaadin-*.d.ts",
     "/vaadin-*.d.ts.map",
     "/vaadin-*.js",
