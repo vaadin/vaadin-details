@@ -39,7 +39,7 @@
     ]
   },
   "scripts": {
-    "build": "ttsc",
+    "build": "tsc && replace-in-file \"/(import|from)( '[.]+\/)(.*)(?<!.js)(';)/g\" \"\\$1\\$2\\$3.js\\$4\" vaadin-*.{js,d.ts},src*.{js,d.ts},theme/**/*.{js,d.ts} --isRegex --verbose",
     "check:version": "magi check-version",
     "gemini": "gemini update test/visual",
     "lint": "npm-run-all --parallel lint:*",
@@ -79,7 +79,6 @@
     "@types/sinon": "^7.5.0",
     "@types/sinon-chai": "3.2.3",
     "@webcomponents/webcomponentsjs": "^2.3.0",
-    "@zoltu/typescript-transformer-append-js-extension": "^1.0.1",
     "api-viewer-element": "^0.2.1",
     "chai": "^4.2.0",
     "coveralls": "^3.0.7",
@@ -106,12 +105,11 @@
     "mocha": "^6.2.2",
     "npm-run-all": "^4.1.5",
     "prettier": "1.18.2",
+    "replace-in-file": "4.2.0",
     "sinon": "^7.5.0",
     "sinon-chai": "^3.3.0",
     "stylelint": "^11.1.1",
     "stylelint-config-vaadin": "^0.2.1",
-    "ts-node": "^8.4.1",
-    "ttypescript": "^1.5.7",
     "typescript": "^3.6.4",
     "web-component-analyzer": "^0.1.20"
   }
