@@ -1067,9 +1067,10 @@
     lit-element "^2.0.0"
     lit-html "^1.0.0"
 
-"@vaadin/vaadin-component-dev-dependencies@vaadin/vaadin-component-dev-dependencies#812619c":
-  version "3.1.0"
-  resolved "https://codeload.github.com/vaadin/vaadin-component-dev-dependencies/tar.gz/812619c523f7733ed1c76fa2153fa1ffa7e443bb"
+"@vaadin/vaadin-component-dev-dependencies@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@vaadin/vaadin-component-dev-dependencies/-/vaadin-component-dev-dependencies-4.0.0.tgz#856de44e89897b527c041e7c346d565a97d6a61e"
+  integrity sha512-PjW1XB0TlSZRAPQIbMTl94j2DObeRrtQryIb8f6IwLgmfWb474ka7ID+Qnb3ttSotHfaXP2eeM04hn5hMYgQOA==
   dependencies:
     "@babel/core" "^7.7.0"
     "@babel/plugin-proposal-class-properties" "^7.7.0"
