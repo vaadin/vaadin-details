@@ -63,17 +63,15 @@ export class VaadinDetails extends ControlStateMixin(VaadinElement) {
 
   protected render() {
     return html`
-      <div role="heading">
-        <div
-          role="button"
-          part="summary"
-          @click="${this._onToggleClick}"
-          @keydown="${this._onToggleKeyDown}"
-          aria-expanded="${this.opened ? 'true' : 'false'}"
-        >
-          <span part="toggle"></span>
-          <span part="summary-content"><slot name="summary"></slot></span>
-        </div>
+      <div
+        role="button"
+        part="summary"
+        @click="${this._onToggleClick}"
+        @keydown="${this._onToggleKeyDown}"
+        aria-expanded="${this.opened ? 'true' : 'false'}"
+      >
+        <span part="toggle"></span>
+        <span part="summary-content"><slot name="summary"></slot></span>
       </div>
       <div
         part="content"

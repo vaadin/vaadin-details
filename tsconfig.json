@@ -12,6 +12,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "strict": true,
+    "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "importHelpers": true
   },

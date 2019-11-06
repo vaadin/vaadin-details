@@ -1,8 +1,7 @@
-import { fixture, html } from '@open-wc/testing-helpers';
+import { expect, fixture, html } from '@vaadin/vaadin-component-dev-dependencies/testing.js';
 import { keyDownOn } from '@polymer/iron-test-helpers/mock-interactions.js';
 import { VaadinDetails } from '../../src/vaadin-details';
 
-const { expect } = chai;
 const { sinon } = window;
 
 describe('details', () => {
@@ -45,10 +44,6 @@ describe('details', () => {
   describe('DOM elements', () => {
     it('should set role="button" on the toggle button', () => {
       expect(toggle.getAttribute('role')).to.equal('button');
-    });
-
-    it('should set role="heading" on the toggle button wrapper', () => {
-      expect(toggle.parentElement!.getAttribute('role')).to.equal('heading');
     });
 
     it('should have `summary` slot inside toggle button', () => {
@@ -135,6 +130,12 @@ describe('details', () => {
       details.addEventListener('keydown', spy);
       keyDownOn(input, 9, 'shift', 'Tab');
       expect(spy).to.not.be.called;
+    });
+  });
+
+  describe('a11y', () => {
+    it('should pass accessibility test', async () => {
+      await expect(details).to.be.accessible();
     });
   });
 });

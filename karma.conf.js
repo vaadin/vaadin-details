@@ -1,4 +1,4 @@
-const { createKarmaConfig, merge } = require('@vaadin/vaadin-component-dev-dependencies');
+const { createKarmaConfig, merge } = require('@vaadin/vaadin-component-dev-dependencies/karma-config.js');
 
 module.exports = config => {
   config.set(

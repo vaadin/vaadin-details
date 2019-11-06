@@ -24,7 +24,6 @@ export const lumoDetails = css`
     font-weight: 500;
     line-height: var(--lumo-line-height-xs);
     color: var(--lumo-secondary-text-color);
-    background-color: inherit;
     border-radius: var(--lumo-border-radius-m);
     cursor: default;
     -webkit-tap-highlight-color: transparent;
