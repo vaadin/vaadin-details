@@ -19,3 +19,5 @@ vaadin-details.js.map
 /test/**/*.js.map
 /test/**/*.d.ts
 /test/**/*.d.ts.map
+/dist
+entrypoint.hashmanifest.json
