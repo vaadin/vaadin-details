@@ -48,6 +48,7 @@
     "lint:css": "stylelint src/*.ts theme/**/*.ts test/*.ts",
     "lint:js": "eslint src theme test --ext .ts --ignore-path .gitignore",
     "lint:lit": "lit-analyzer src --strict",
+    "prepublishOnly": "npm run build",
     "prestart": "wca analyze src/vaadin-details.ts --format json --outFile custom-elements.json",
     "preversion": "magi update-version",
     "serve:dist": "es-dev-server --app-index dist/index.html --open",
