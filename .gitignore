@@ -2,7 +2,7 @@ bower_components
 node_modules
 package-lock.json
 coverage
-analysis.json
+custom-elements.json
 vaadin-details.js
 vaadin-details.d.ts
 vaadin-details.d.ts.map
