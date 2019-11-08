@@ -4,7 +4,7 @@ import '@vaadin/vaadin-material-styles/font-icons.js';
 import '@vaadin/vaadin-material-styles/shadow.js';
 import '@vaadin/vaadin-material-styles/typography.js';
 
-export const materialDetails = css`
+export const detailsStyles = css`
   :host {
     font-family: var(--material-font-family);
     box-shadow: var(--material-shadow-elevation-2dp);

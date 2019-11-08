@@ -1,4 +1,4 @@
 import { registerStyles } from '@vaadin/vaadin-themable-mixin/register-styles.js';
-import { lumoDetails } from './vaadin-details-css';
+import { detailsStyles } from './vaadin-details-css';
 
-registerStyles('vaadin-details', lumoDetails);
+registerStyles('vaadin-details', detailsStyles);
