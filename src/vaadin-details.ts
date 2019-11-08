@@ -1,5 +1,4 @@
 import { html, css, customElement, property, PropertyValues } from 'lit-element';
-import { styleMap } from 'lit-html/directives/style-map.js';
 import { VaadinElement } from '@vaadin/element-base/vaadin-element.js';
 import { ControlStateMixin } from '@vaadin/control-state-mixin/control-state-mixin.js';
 
@@ -47,7 +46,6 @@ export class VaadinDetails extends ControlStateMixin(VaadinElement) {
 
       [part='content'] {
         display: none;
-        overflow: hidden;
       }
 
       :host([disabled]) [part='summary'] {
@@ -56,7 +54,6 @@ export class VaadinDetails extends ControlStateMixin(VaadinElement) {
 
       :host([opened]) [part='content'] {
         display: block;
-        overflow: visible;
       }
     `;
   }
@@ -73,12 +70,7 @@ export class VaadinDetails extends ControlStateMixin(VaadinElement) {
         <span part="toggle"></span>
         <span part="summary-content"><slot name="summary"></slot></span>
       </div>
-      <div
-        part="content"
-        style="${styleMap({ maxHeight: this.opened ? '' : '0px' })}"
-        aria-hidden="${this.opened ? 'false' : 'true'}"
-        @keydown="${this._onContentKeyDown}"
-      >
+      <div part="content" aria-hidden="${this.opened ? 'false' : 'true'}" @keydown="${this._onContentKeyDown}">
         <slot></slot>
       </div>
     `;

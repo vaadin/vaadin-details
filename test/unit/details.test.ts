@@ -85,8 +85,6 @@ describe('details', () => {
     it('should hide the content when `opened` is false', () => {
       const style = getComputedStyle(content);
       expect(style.display).to.equal('none');
-      expect(style.overflow).to.equal('hidden');
-      expect(style.maxHeight).to.equal('0px');
     });
 
     it('should show the content when `opened` is true', async () => {
@@ -94,8 +92,6 @@ describe('details', () => {
       await details.updateComplete;
       const style = getComputedStyle(content);
       expect(style.display).to.equal('block');
-      expect(style.overflow).to.equal('visible');
-      expect(style.maxHeight).to.equal('none');
     });
 
     it('should dispatch `opened-changed` event when `opened` changes', async () => {
