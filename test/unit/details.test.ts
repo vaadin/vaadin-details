@@ -10,12 +10,12 @@ describe('details', () => {
   let content: HTMLDivElement;
 
   beforeEach(async () => {
-    details = (await fixture(html`
+    details = await fixture(html`
       <vaadin-details>
         <div slot="summary">Summary</div>
         <input />
       </vaadin-details>
-    `)) as VaadinDetails;
+    `);
     toggle = details.renderRoot.querySelector('[part="summary"]') as HTMLDivElement;
     content = details.renderRoot.querySelector('[part="content"]') as HTMLDivElement;
   });
