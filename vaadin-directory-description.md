@@ -1,5 +1,4 @@
 [![npm version](https://badgen.net/npm/v/@vaadin/vaadin-details)](https://www.npmjs.com/package/@vaadin/vaadin-details)
-[![Bower version](https://badgen.net/github/release/vaadin/vaadin-details)](https://github.com/vaadin/vaadin-details/releases)
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/vaadin/vaadin-details)
 [![Build Status](https://travis-ci.org/vaadin/vaadin-details.svg?branch=master)](https://travis-ci.org/vaadin/vaadin-details)
 [![Coverage Status](https://coveralls.io/repos/github/vaadin/vaadin-details/badge.svg?branch=master)](https://coveralls.io/github/vaadin/vaadin-details?branch=master)
