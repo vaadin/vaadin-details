@@ -19,6 +19,7 @@
   <div slot="summary">Expandable Details</div>
   Toggle using mouse, Enter and Space keys.
 </vaadin-details>
+```
 
 [<img src="https://raw.githubusercontent.com/vaadin/vaadin-details/master/screenshot.png" alt="Screenshot of vaadin-details" width="320">](https://vaadin.com/components/vaadin-details)
 
