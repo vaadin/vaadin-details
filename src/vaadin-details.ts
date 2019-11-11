@@ -26,7 +26,7 @@ export class VaadinDetails extends ControlStateMixin(VaadinElement) {
   static is = 'vaadin-details';
 
   static get version() {
-    return '1.0.1';
+    return '2.0.0-alpha1';
   }
 
   /**
