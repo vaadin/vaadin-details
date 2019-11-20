@@ -1,5 +1,6 @@
 import { customElement } from 'lit-element';
 import { DetailsBase } from './vaadin-details-base';
+import { DetailsStateMixin } from './vaadin-details-state-mixin';
 
 /**
  * `<vaadin-details>` is a Web Component creating an expandable panel
@@ -21,7 +22,7 @@ import { DetailsBase } from './vaadin-details-base';
  * @fires opened-changed - Fired when the `opened` property changes.
  */
 @customElement('vaadin-details')
-export class VaadinDetails extends DetailsBase {
+export class VaadinDetails extends DetailsStateMixin(DetailsBase) {
   static is = 'vaadin-details';
 
   static get version() {
