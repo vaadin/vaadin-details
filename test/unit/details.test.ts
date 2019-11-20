@@ -1,5 +1,5 @@
 import { expect, fixture, html } from '@vaadin/vaadin-component-dev-dependencies/testing.js';
-import { keyDownOn } from '@polymer/iron-test-helpers/mock-interactions.js';
+import { enterKeyDown, spaceKeyDown, tabKeyDown } from '@vaadin/vaadin-component-dev-dependencies/keys.js';
 import { VaadinDetails } from '../../src/vaadin-details';
 
 const { sinon } = window;
@@ -62,16 +62,16 @@ describe('details', () => {
     });
 
     it('should update `opened` on toggle button enter', () => {
-      keyDownOn(toggle, 13, [], 'Enter');
+      enterKeyDown(toggle);
       expect(details.opened).to.equal(true);
-      keyDownOn(toggle, 13, [], 'Enter');
+      enterKeyDown(toggle);
       expect(details.opened).to.equal(false);
     });
 
     it('should update `opened` on toggle button space', () => {
-      keyDownOn(toggle, 32, [], ' ');
+      spaceKeyDown(toggle);
       expect(details.opened).to.equal(true);
-      keyDownOn(toggle, 32, [], ' ');
+      spaceKeyDown(toggle);
       expect(details.opened).to.equal(false);
     });
 
@@ -124,7 +124,7 @@ describe('details', () => {
       const input = details.querySelector('input') as HTMLInputElement;
       const spy = sinon.spy();
       details.addEventListener('keydown', spy);
-      keyDownOn(input, 9, 'shift', 'Tab');
+      tabKeyDown(input, 'shift');
       expect(spy).to.not.be.called;
     });
   });

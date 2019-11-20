@@ -71,7 +71,6 @@
     "tslib": "^1.10.0"
   },
   "devDependencies": {
-    "@polymer/iron-test-helpers": "^3.0.1",
-    "@vaadin/vaadin-component-dev-dependencies": "^4.2.0"
+    "@vaadin/vaadin-component-dev-dependencies": "^4.3.0"
   }
 }
