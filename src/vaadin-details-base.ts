@@ -1,8 +1,7 @@
 import { html, css, property, PropertyValues } from 'lit-element';
 import { VaadinElement } from '@vaadin/element-base/vaadin-element.js';
-import { ControlStateMixin } from '@vaadin/control-state-mixin/control-state-mixin.js';
 
-export class DetailsBase extends ControlStateMixin(VaadinElement) {
+export class DetailsBase extends VaadinElement {
   /**
    * When true, the panel content is expanded and visible
    */
@@ -20,10 +19,6 @@ export class DetailsBase extends ControlStateMixin(VaadinElement) {
 
       [part='content'] {
         display: none;
-      }
-
-      :host([disabled]) [part='summary'] {
-        pointer-events: none;
       }
 
       :host([opened]) [part='content'] {
@@ -50,10 +45,6 @@ export class DetailsBase extends ControlStateMixin(VaadinElement) {
     `;
   }
 
-  protected get focusElement() {
-    return this.renderRoot.querySelector('[part="summary"]');
-  }
-
   protected updated(props: PropertyValues) {
     super.updated(props);
 
@@ -72,17 +63,18 @@ export class DetailsBase extends ControlStateMixin(VaadinElement) {
     }
   }
 
-  private _onToggleClick() {
-    if (this.disabled) {
-      return;
-    }
-    this.opened = !this.opened;
+  protected _onToggleClick() {
+    this._toggleOpened();
   }
 
   private _onToggleKeyDown(e: KeyboardEvent) {
     if ([13, 32].indexOf(e.keyCode) > -1) {
       e.preventDefault();
-      this.opened = !this.opened;
+      this._toggleOpened();
     }
+  }
+
+  private _toggleOpened() {
+    this.opened = !this.opened;
   }
 }
