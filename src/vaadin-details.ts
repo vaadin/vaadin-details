@@ -26,7 +26,7 @@ export class VaadinDetails extends DetailsStateMixin(DetailsBase) {
   static is = 'vaadin-details';
 
   static get version() {
-    return '2.0.0-alpha1';
+    return '2.0.0-alpha2';
   }
 }
 
