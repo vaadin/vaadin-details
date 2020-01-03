@@ -25,7 +25,7 @@ export const detailsStyles = css`
     line-height: var(--lumo-line-height-xs);
     color: var(--lumo-secondary-text-color);
     border-radius: var(--lumo-border-radius-m);
-    cursor: default;
+    cursor: var(--lumo-clickable-cursor, default);
     -webkit-tap-highlight-color: transparent;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
