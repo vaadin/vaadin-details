@@ -100,4 +100,16 @@ export const detailsStyles = css`
   [part='content'] {
     padding: 8px 24px 24px;
   }
+
+  /* RTL specific styles */
+
+  :host([dir="rtl"]) [part="toggle"] {
+    margin-left: -8px;
+    margin-right: 0;
+  }
+
+  :host([dir="rtl"]) [part="toggle"]::after {
+    left: auto;
+    right: 0;
+  }
 `;
