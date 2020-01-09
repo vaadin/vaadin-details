@@ -102,13 +102,12 @@ export const detailsStyles = css`
   }
 
   /* RTL specific styles */
-
-  :host([dir="rtl"]) [part="toggle"] {
+  :host([dir='rtl']) [part='toggle'] {
     margin-left: -8px;
     margin-right: 0;
   }
 
-  :host([dir="rtl"]) [part="toggle"]::after {
+  :host([dir='rtl']) [part='toggle']::after {
     left: auto;
     right: 0;
   }

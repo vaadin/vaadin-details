@@ -114,7 +114,6 @@ export const detailsStyles = css`
   }
 
   /* RTL specific styles */
-
   :host([dir='rtl']) [part='toggle'] {
     margin-left: var(--lumo-space-xs);
     margin-right: calc(var(--lumo-space-xs) * -1);
