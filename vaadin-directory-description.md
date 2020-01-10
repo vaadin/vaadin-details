@@ -9,7 +9,7 @@
 
 [&lt;vaadin-details&gt;](https://vaadin.com/components/vaadin-details) is a Web Component for expandable details, part of the [Vaadin components](https://vaadin.com/components).
 
-[<img src="https://raw.githubusercontent.com/vaadin/vaadin-details/master/screenshot.png" width="200" alt="Screenshot of vaadin-details">](https://vaadin.com/components/vaadin-details)
+[<img src="https://raw.githubusercontent.com/vaadin/vaadin-details/master/screenshot.png" alt="Screenshot of vaadin-details" width="320">](https://vaadin.com/components/vaadin-details)
 
 ## Example Usage
 
