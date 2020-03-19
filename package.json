@@ -1,6 +1,6 @@
 {
   "name": "@vaadin/vaadin-details",
-  "version": "2.0.0-alpha4",
+  "version": "2.0.0-alpha5",
   "description": "vaadin-details",
   "main": "vaadin-details.js",
   "module": "vaadin-details.js",
