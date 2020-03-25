@@ -1,41 +1,26 @@
-gemini.suite('vaadin-details', rootSuite => {
-  function wait(actions) {
-    return actions.wait(7000);
-  }
-
-  function goToAboutBlank(actions) {
-    // Firefox stops responding on socket after a test, workaround:
-    return actions.executeJS(window => {
-      window.location.href = 'about:blank'; // eslint-disable-line no-param-reassign
-    });
-  }
-
-  rootSuite.before(wait).after(goToAboutBlank);
-
+describe('vaadin-details', () => {
   ['lumo', 'material'].forEach(theme => {
-    gemini.suite(`details-${theme}`, suite => {
-      suite
-        .setUrl(`details.html?theme=${theme}`)
-        .setCaptureElements('#details-tests')
-        .capture(`default`);
+    it(`${theme}-default`, function() {
+      return this.browser
+        .url(`details.html?theme=${theme}`)
+        .pause(10000)
+        .assertView(`${theme}-default`, '#details-tests');
     });
-  });
 
-  ['lumo', 'material'].forEach(theme => {
-    gemini.suite(`details-rtl-${theme}`, suite => {
-      suite
-        .setUrl(`details-rtl.html?theme=${theme}`)
-        .setCaptureElements('#details-tests')
-        .capture(`default`);
+    it(`${theme}-rtl`, function() {
+      return this.browser
+        .url(`details-rtl.html?theme=${theme}`)
+        .pause(10000)
+        .assertView(`${theme}-rtl`, '#details-tests');
     });
   });
 
   ['filled', 'reverse', 'small'].forEach(variant => {
-    gemini.suite(`lumo-${variant}`, suite => {
-      suite
-        .setUrl(`lumo-${variant}.html`)
-        .setCaptureElements('#details-tests')
-        .capture(`default`);
+    it(`lumo-${variant}`, function() {
+      return this.browser
+        .url(`lumo-${variant}.html`)
+        .pause(10000)
+        .assertView(`lumo-${variant}`, '#details-tests');
     });
   });
 });
