@@ -9,7 +9,7 @@ describe('vaadin-details', () => {
         .waitUntil(async () => {
           const ready = await this.browser.getAttribute(locator, 'data-ready');
           return ready === 'true';
-        }, 12000)
+        }, 25000)
         .assertView(`${theme}-default`, locator);
     });
 
@@ -20,7 +20,7 @@ describe('vaadin-details', () => {
         .waitUntil(async () => {
           const ready = await this.browser.getAttribute(locator, 'data-ready');
           return ready === 'true';
-        }, 12000)
+        }, 25000)
         .assertView(`${theme}-rtl`, locator);
     });
   });
@@ -33,7 +33,7 @@ describe('vaadin-details', () => {
         .waitUntil(async () => {
           const ready = await this.browser.getAttribute(locator, 'data-ready');
           return ready === 'true';
-        }, 12000)
+        }, 25000)
         .assertView(`lumo-${variant}`, locator);
     });
   });
