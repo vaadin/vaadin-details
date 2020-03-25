@@ -2,6 +2,9 @@
 <html>
 <head lang="en">
   <meta charset="UTF-8">
+  <script>
+    window.polymerSkipLoadingFontRoboto = true;
+  </script>
 </head>
 
 <body>
@@ -29,9 +32,15 @@
   <script type="module">
     import '../../theme/lumo/vaadin-details.js';
 
-    window.requestAnimationFrame(() => {
-      document.getElementById('details-tests').dataset.ready = true;
-    });
+    (async() => {
+      const nodes = Array.from(document.querySelectorAll('vaadin-details'));
+
+      await Promise.all(nodes.map(el => el.updateComplete));
+
+      window.requestAnimationFrame(() => {
+        document.getElementById('details-tests').dataset.ready = true;
+      });
+    })();
   </script>
 </body>
 </html>
