@@ -24,6 +24,10 @@
 
   <script type="module">
     import '../../theme/lumo/vaadin-details.js';
+
+    window.requestAnimationFrame(() => {
+      document.getElementById('details-tests').dataset.ready = true;
+    });
   </script>
 </body>
 </html>
