@@ -9,7 +9,6 @@ module.exports = {
         clustersSize: 10,
         stopOnFirstFail: false
       },
-      screenshotDelay: 500,
       tolerance: 5,
       desiredCapabilities: {
         browserName: 'chrome',
