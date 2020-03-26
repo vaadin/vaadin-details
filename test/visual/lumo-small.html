@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-
-<head lang="en">
+<html>
+<head>
   <meta charset="UTF-8">
+  <title></title>
+  <script>
+    window.polymerSkipLoadingFontRoboto = true;
+  </script>
 </head>
 
 <body>
@@ -24,14 +28,20 @@
       <div slot="summary">Small Filled Opened</div>
       <span>Go Vaadin!</span>
     </vaadin-details>
-    <br>
-    <vaadin-details theme="filled" style="max-width: 200px" opened>
-      <div slot="summary">Long Summary Which Will Wrap In Several Lines</div>
-      <span>Go Vaadin!</span>
-    </vaadin-details>
   </span>
 
   <script type="module">
     import '../../theme/lumo/vaadin-details.js';
+
+    (async() => {
+      const nodes = Array.from(document.querySelectorAll('vaadin-details'));
+
+      await Promise.all(nodes.map(el => el.updateComplete));
+
+      window.requestAnimationFrame(() => {
+        document.getElementById('details-tests').dataset.ready = true;
+      });
+    })();
   </script>
 </body>
+</html>

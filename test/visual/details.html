@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-
-<head lang="en">
+<html>
+<head>
   <meta charset="UTF-8">
   <title></title>
+  <script>
+    window.polymerSkipLoadingFontRoboto = true;
+  </script>
 </head>
 
 <body>
@@ -36,7 +39,18 @@
 
 
   <script type="module">
-    const theme = location.search.replace(/.*theme=(\w+).*/, '$1') || 'lumo';
-    import('../../theme/' + theme + '/vaadin-details.js');
+    (async() => {
+      const theme = window.location.search.replace(/.*theme=(\w+).*/, '$1') || 'lumo';
+      const nodes = Array.from(document.querySelectorAll('vaadin-details'));
+
+      await import('../../theme/' + theme + '/vaadin-details.js');
+
+      await Promise.all(nodes.map(el => el.updateComplete));
+
+      window.requestAnimationFrame(() => {
+        document.getElementById('details-tests').dataset.ready = true;
+      });
+    })();
   </script>
 </body>
+</html>
