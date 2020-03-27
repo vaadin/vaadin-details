@@ -11,7 +11,7 @@ describe('vaadin-details', () => {
 
     it(`${theme}-rtl`, function() {
       return this.browser
-        .url(`details-rtl.html?theme=${theme}`)
+        .url(`details.html?theme=${theme}&dir=rtl`)
         .waitForVisible(locator, 10000)
         .assertView(`${theme}-rtl`, locator);
     });
@@ -23,6 +23,13 @@ describe('vaadin-details', () => {
         .url(`lumo-${variant}.html`)
         .waitForVisible(locator, 10000)
         .assertView(`lumo-${variant}`, locator);
+    });
+
+    it(`lumo-${variant}-rtl`, function() {
+      return this.browser
+        .url(`lumo-${variant}.html?dir=rtl`)
+        .waitForVisible(locator, 10000)
+        .assertView(`lumo-${variant}-rtl`, locator);
     });
   });
 });

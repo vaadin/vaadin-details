@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title></title>
-  <script>
-    window.polymerSkipLoadingFontRoboto = true;
-  </script>
 </head>
 
 <body>
@@ -29,9 +26,12 @@
     import '../../theme/lumo/vaadin-details.js';
 
     (async() => {
-      const nodes = Array.from(document.querySelectorAll('vaadin-details'));
+      const dir = window.location.search.replace(/.*dir=(\w+).*/, '$1') || 'ltr';
+      document.documentElement.setAttribute('dir', dir);
 
-      await Promise.all(nodes.map(el => el.updateComplete));
+      const elements = Array.from(document.querySelectorAll('vaadin-details'));
+
+      await Promise.all(elements.map(el => el.updateComplete));
 
       window.requestAnimationFrame(() => {
         document.getElementById('details-tests').dataset.ready = true;
