@@ -21,7 +21,6 @@
     "vaadin-details.ts",
     "src",
     "test",
-    "theme",
-    "node_modules/@vaadin/themable-element/custom_typings/*.d.ts"
+    "theme"
   ]
 }
