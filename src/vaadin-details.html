@@ -114,6 +114,7 @@ This program is available under Apache License Version 2.0, available at https:/
           return {
             /**
              * If true, the details content is visible.
+             * @type {boolean}
              */
             opened: {
               type: Boolean,
@@ -126,7 +127,7 @@ This program is available under Apache License Version 2.0, available at https:/
         }
 
         /**
-         * @return {Element}
+         * @return {!HTMLElement}
          * @protected
          */
         get _collapsible() {
@@ -135,7 +136,7 @@ This program is available under Apache License Version 2.0, available at https:/
 
         /**
          * Focusable element used by vaadin-control-state-mixin
-         * @return {Element}
+         * @return {!HTMLElement}
          * @protected
          */
         get focusElement() {
@@ -168,7 +169,7 @@ This program is available under Apache License Version 2.0, available at https:/
         }
 
         /**
-         * @param {MouseEvent!} e
+         * @param {!MouseEvent} e
          * @protected
          */
         _onToggleClick(e) {
@@ -176,7 +177,7 @@ This program is available under Apache License Version 2.0, available at https:/
         }
 
         /**
-         * @param {KeyboardEvent!} e
+         * @param {!KeyboardEvent} e
          * @protected
          */
         _onToggleKeyDown(e) {
