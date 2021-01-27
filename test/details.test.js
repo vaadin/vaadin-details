@@ -139,14 +139,14 @@ describe('vaadin-details', () => {
     });
 
     it('should stop Shift + Tab on the content from propagating to the host', () => {
-      const event = keyboardEventFor('keydown', 9, 'shift', 'Tab')
+      const event = keyboardEventFor('keydown', 9, 'shift', 'Tab');
       const spy = sinon.spy(event, 'stopPropagation');
       input.dispatchEvent(event);
       expect(spy.called).to.be.true;
     });
 
     it('should not stop Tab on the content from propagating to the host', () => {
-      const event = keyboardEventFor('keydown', 9, [], 'Tab')
+      const event = keyboardEventFor('keydown', 9, [], 'Tab');
       const spy = sinon.spy(event, 'stopPropagation');
       input.dispatchEvent(event);
       expect(spy.called).to.be.false;

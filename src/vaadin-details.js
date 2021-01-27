@@ -46,45 +46,49 @@ import { ControlStateMixin } from '@vaadin/vaadin-control-state-mixin/vaadin-con
  * @mixes ElementMixin
  * @mixes ThemableMixin
  */
-class DetailsElement extends
-  ControlStateMixin(
-    ElementMixin(
-      ThemableMixin(PolymerElement))) {
+class DetailsElement extends ControlStateMixin(ElementMixin(ThemableMixin(PolymerElement))) {
   static get template() {
     return html`
-    <style>
-      :host {
-        display: block;
-      }
+      <style>
+        :host {
+          display: block;
+        }
 
-      :host([hidden]) {
-        display: none !important;
-      }
+        :host([hidden]) {
+          display: none !important;
+        }
 
-      [part="content"] {
-        display: none;
-        overflow: hidden;
-      }
+        [part='content'] {
+          display: none;
+          overflow: hidden;
+        }
 
-      [part="summary"][disabled] {
-        pointer-events: none;
-      }
+        [part='summary'][disabled] {
+          pointer-events: none;
+        }
 
-      :host([opened]) [part="content"] {
-        display: block;
-        overflow: visible;
-      }
-    </style>
-    <div role="heading">
-      <div role="button" part="summary" on-click="_onToggleClick" on-keydown="_onToggleKeyDown" disabled\$="[[disabled]]" aria-expanded\$="[[_getAriaExpanded(opened)]]">
-        <span part="toggle"></span>
-        <span part="summary-content"><slot name="summary"></slot></span>
+        :host([opened]) [part='content'] {
+          display: block;
+          overflow: visible;
+        }
+      </style>
+      <div role="heading">
+        <div
+          role="button"
+          part="summary"
+          on-click="_onToggleClick"
+          on-keydown="_onToggleKeyDown"
+          disabled$="[[disabled]]"
+          aria-expanded$="[[_getAriaExpanded(opened)]]"
+        >
+          <span part="toggle"></span>
+          <span part="summary-content"><slot name="summary"></slot></span>
+        </div>
       </div>
-    </div>
-    <div part="content" aria-hidden\$="[[_getAriaHidden(opened)]]">
-      <slot></slot>
-    </div>
-`;
+      <div part="content" aria-hidden$="[[_getAriaHidden(opened)]]">
+        <slot></slot>
+      </div>
+    `;
   }
 
   static get is() {
@@ -131,7 +135,7 @@ class DetailsElement extends
   ready() {
     super.ready();
     // prevent Shift + Tab on content from host blur
-    this._collapsible.addEventListener('keydown', e => {
+    this._collapsible.addEventListener('keydown', (e) => {
       if (e.shiftKey && e.keyCode === 9) {
         e.stopPropagation();
       }
@@ -157,7 +161,7 @@ class DetailsElement extends
    * @param {!MouseEvent} e
    * @protected
    */
-  _onToggleClick(e) {
+  _onToggleClick() {
     this.opened = !this.opened;
   }
 
