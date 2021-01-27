@@ -1,9 +1,10 @@
-<link rel="import" href="../../../vaadin-material-styles/color.html">
-<link rel="import" href="../../../vaadin-material-styles/font-icons.html">
-<link rel="import" href="../../../vaadin-material-styles/shadow.html">
-<link rel="import" href="../../../vaadin-material-styles/typography.html">
+import '@vaadin/vaadin-material-styles/color.js';
+import '@vaadin/vaadin-material-styles/font-icons.js';
+import '@vaadin/vaadin-material-styles/shadow.js';
+import '@vaadin/vaadin-material-styles/typography.js';
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
 
-<dom-module id="material-details" theme-for="vaadin-details">
+const $_documentContainer = html`<dom-module id="material-details" theme-for="vaadin-details">
   <template>
     <style>
       :host {
@@ -115,4 +116,6 @@
       }
     </style>
   </template>
-</dom-module>
+</dom-module>`;
+
+document.head.appendChild($_documentContainer.content);
