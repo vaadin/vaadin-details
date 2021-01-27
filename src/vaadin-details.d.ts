@@ -1,12 +1,8 @@
-import {PolymerElement} from '@polymer/polymer/polymer-element.js';
-
 import {ThemableMixin} from '@vaadin/vaadin-themable-mixin/vaadin-themable-mixin.js';
 
 import {ElementMixin} from '@vaadin/vaadin-element-mixin/vaadin-element-mixin.js';
 
 import {ControlStateMixin} from '@vaadin/vaadin-control-state-mixin/vaadin-control-state-mixin.js';
-
-import {html} from '@polymer/polymer/lib/utils/html-tag.js';
 
 /**
  * `<vaadin-details>` is a Web Component which the creates an
@@ -45,20 +41,22 @@ declare class DetailsElement extends
   ControlStateMixin(
   ElementMixin(
   ThemableMixin(
-  PolymerElement))) {
+  HTMLElement))) {
 
   /**
    * Focusable element used by vaadin-control-state-mixin
    */
   readonly focusElement: HTMLElement;
+
   readonly _collapsible: HTMLElement;
 
   /**
    * If true, the details content is visible.
    */
   opened: boolean;
-  ready(): void;
+
   _onToggleClick(e: MouseEvent): void;
+
   _onToggleKeyDown(e: KeyboardEvent): void;
 }
 
