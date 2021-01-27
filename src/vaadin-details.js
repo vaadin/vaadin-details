@@ -157,18 +157,12 @@ class DetailsElement extends ControlStateMixin(ElementMixin(ThemableMixin(Polyme
     this._collapsible.style.maxHeight = opened ? '' : '0px';
   }
 
-  /**
-   * @param {!MouseEvent} e
-   * @protected
-   */
+  /** @private */
   _onToggleClick() {
     this.opened = !this.opened;
   }
 
-  /**
-   * @param {!KeyboardEvent} e
-   * @protected
-   */
+  /** @private */
   _onToggleKeyDown(e) {
     if ([13, 32].indexOf(e.keyCode) > -1) {
       e.preventDefault();

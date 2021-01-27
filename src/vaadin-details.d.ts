@@ -49,10 +49,6 @@ declare class DetailsElement extends ControlStateMixin(ElementMixin(ThemableMixi
    * If true, the details content is visible.
    */
   opened: boolean;
-
-  _onToggleClick(e: MouseEvent): void;
-
-  _onToggleKeyDown(e: KeyboardEvent): void;
 }
 
 declare global {
