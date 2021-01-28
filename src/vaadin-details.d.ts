@@ -5,6 +5,17 @@ import { ElementMixin } from '@vaadin/vaadin-element-mixin/vaadin-element-mixin.
 import { ControlStateMixin } from '@vaadin/vaadin-control-state-mixin/vaadin-control-state-mixin.js';
 
 /**
+ * Fired when the `opened` property changes.
+ */
+export type DetailsOpenedChanged = CustomEvent<{ value: boolean }>;
+
+export interface DetailsElementEventMap {
+  'opened-changed': DetailsOpenedChanged;
+}
+
+export type DetailsEventMap = HTMLElementEventMap & DetailsElementEventMap;
+
+/**
  * `<vaadin-details>` is a Web Component which the creates an
  * expandable panel similar to `<details>` HTML element.
  *
@@ -49,6 +60,18 @@ declare class DetailsElement extends ControlStateMixin(ElementMixin(ThemableMixi
    * If true, the details content is visible.
    */
   opened: boolean;
+
+  addEventListener<K extends keyof DetailsEventMap>(
+    type: K,
+    listener: (this: DetailsElement, ev: DetailsEventMap[K]) => void,
+    options?: boolean | AddEventListenerOptions
+  ): void;
+
+  removeEventListener<K extends keyof DetailsEventMap>(
+    type: K,
+    listener: (this: DetailsElement, ev: DetailsEventMap[K]) => void,
+    options?: boolean | EventListenerOptions
+  ): void;
 }
 
 declare global {
