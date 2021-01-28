@@ -41,6 +41,8 @@ import { ControlStateMixin } from '@vaadin/vaadin-control-state-mixin/vaadin-con
  *
  * See [ThemableMixin – how to apply styles for shadow parts](https://github.com/vaadin/vaadin-themable-mixin/wiki)
  *
+ * @fires {CustomEvent} opened-changed - Fired when the `opened` property changes.
+ *
  * @extends HTMLElement
  * @mixes ControlStateMixin
  * @mixes ElementMixin
