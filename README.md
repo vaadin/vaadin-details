@@ -71,7 +71,7 @@ To use the Material theme, import the correspondent file from the `theme/materia
 
 1. You can also open visual tests, for example:
 
-  - http://localhost:8000/test/visual/default.html
+  - http://localhost:8000/test/visual/details.html
 
 
 ## Running tests from the command line
