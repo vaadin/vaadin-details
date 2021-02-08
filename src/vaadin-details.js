@@ -82,14 +82,15 @@ class DetailsElement extends ControlStateMixin(ElementMixin(ThemableMixin(Polyme
           on-keydown="_onToggleKeyDown"
           disabled$="[[disabled]]"
           aria-expanded$="[[_getAriaExpanded(opened)]]"
+          aria-controls$="[[_contentId]]"
         >
           <span part="toggle"></span>
           <span part="summary-content"><slot name="summary"></slot></span>
         </div>
       </div>
-      <div part="content" aria-hidden$="[[_getAriaHidden(opened)]]">
+      <section id$="[[_contentId]]" part="content" aria-hidden$="[[_getAriaHidden(opened)]]">
         <slot></slot>
-      </div>
+      </section>
     `;
   }
 
@@ -136,6 +137,7 @@ class DetailsElement extends ControlStateMixin(ElementMixin(ThemableMixin(Polyme
 
   ready() {
     super.ready();
+    this._contentId = this._getContentId();
     // prevent Shift + Tab on content from host blur
     this._collapsible.addEventListener('keydown', (e) => {
       if (e.shiftKey && e.keyCode === 9) {
@@ -152,6 +154,17 @@ class DetailsElement extends ControlStateMixin(ElementMixin(ThemableMixin(Polyme
   /** @private */
   _getAriaHidden(opened) {
     return opened ? 'false' : 'true';
+  }
+
+  /** @private */
+  _getContentId() {
+    const registrations = (window.Vaadin && window.Vaadin.registrations) || [];
+    const DetailsElement = registrations.filter((Element) => Element.is === 'vaadin-details')[0];
+    let id = 0;
+    if (DetailsElement) {
+      id = DetailsElement._uniqueId = 1 + DetailsElement._uniqueId || 0;
+    }
+    return `${this.constructor.is}-content-${id}`;
   }
 
   /** @private */

@@ -4,6 +4,12 @@ import { fixtureSync } from '@open-wc/testing-helpers';
 import { keyboardEventFor, keyDownOn } from '@polymer/iron-test-helpers/mock-interactions.js';
 import '../vaadin-details.js';
 
+const getUniqueId = () => {
+  const registrations = (window.Vaadin && window.Vaadin.registrations) || [];
+  const DetailsElement = registrations.filter((i) => i.is === 'vaadin-details')[0];
+  return DetailsElement ? DetailsElement._uniqueId : 0;
+};
+
 describe('vaadin-details', () => {
   let details, toggle, content;
 
@@ -121,6 +127,10 @@ describe('vaadin-details', () => {
       expect(toggle.getAttribute('aria-expanded')).to.equal('true');
     });
 
+    it('should set aria-controls on toggle button', () => {
+      expect(toggle.getAttribute('aria-controls')).to.equal(`vaadin-details-content-${getUniqueId()}`);
+    });
+
     it('should set aria-hidden on the content to true by default', () => {
       expect(content.getAttribute('aria-hidden')).to.equal('true');
     });
@@ -128,6 +138,25 @@ describe('vaadin-details', () => {
     it('should set aria-hidden on the content to false when opened', () => {
       details.opened = true;
       expect(content.getAttribute('aria-hidden')).to.equal('false');
+    });
+
+    it('should set unique id on the content', () => {
+      const id = 1 + getUniqueId();
+      const container = fixtureSync(`
+        <div>
+          <vaadin-details>
+            <div slot="summary">Summary</div>
+            <input>
+          </vaadin-details>
+          <vaadin-details>
+            <div slot="summary">Summary</div>
+            <input>
+          </vaadin-details>
+        </div>
+      `);
+      const details = container.querySelectorAll('vaadin-details');
+      expect(details[0]._collapsible.id).to.equal(`vaadin-details-content-${id}`);
+      expect(details[1]._collapsible.id).to.equal(`vaadin-details-content-${1 + id}`);
     });
   });
 
