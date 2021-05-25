@@ -1,10 +1,7 @@
 # &lt;vaadin-details&gt;
 
-> ⚠️ 　Starting from Vaadin 20, this project has migrated to [`vaadin-web-components`](https://github.com/vaadin/vaadin-web-components/tree/master/packages/vaadin-details) *monorepository*.
->
-> This repository is used for Vaadin 14 LTS and Vaadin 19.
-
----
+> ⚠️ Starting from Vaadin 20, the source code and issues for this component are migrated to the [`vaadin/web-components`](https://github.com/vaadin/web-components/tree/master/packages/vaadin-details) monorepository.
+> This repository contains the source code and releases of `<vaadin-details>` for the Vaadin versions 10 to 19.
 
 [&lt;vaadin-details&gt;](https://vaadin.com/components/vaadin-details) is a Web Component providing functionality for expandable details, part of the [Vaadin components](https://vaadin.com/components).
 
