@@ -24,7 +24,7 @@ module.exports = {
       dir: './coverage',
       reporters: ['text-summary', 'lcov'],
       include: [
-        '**/vaadin-accordion/src/*.html'
+        '**/vaadin-details/src/*.html'
       ],
       exclude: [],
       thresholds: {
