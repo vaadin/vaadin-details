@@ -166,6 +166,19 @@
           // Should set focused attribute in any case
           expect(details.hasAttribute('focused')).to.be.true;
         });
+
+        it('should not delegate focus when shift-tabbing', () => {
+          const spy = sinon.spy(details.focusElement, 'focus');
+          // Simulate focus in into details, while Shift-Tabbing
+          MockInteractions.keyDownOn(details, 9, 'shift', 'Tab');
+          const event = new CustomEvent('focusin', {bubbles: true, composed: true});
+          event.relatedTarget = document.body;
+          details.dispatchEvent(event);
+
+          expect(spy).to.not.be.called;
+          // Should not set focused attribute
+          expect(details.hasAttribute('focused')).to.be.false;
+        });
       });
     });
   </script>
