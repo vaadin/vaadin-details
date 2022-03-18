@@ -131,6 +131,8 @@
         beforeEach(() => {
           details = fixture('default');
           input = details.querySelector('input');
+          // Force reset of global keyboardActive state in ControlStateMixin between tests
+          MockInteractions.down(document.body);
         });
 
         it('should stop Shift + Tab on the content from propagating to the host', () => {
@@ -138,6 +140,44 @@
           details.addEventListener('keydown', spy);
           MockInteractions.keyDownOn(input, 9, 'shift', 'Tab');
           expect(spy).to.not.be.called;
+        });
+
+        it('should delegate focus to summary element when using keyboard navigation', () => {
+          const spy = sinon.spy(details.focusElement, 'focus');
+          // Simulate focus in into details, while pressing tab key
+          MockInteractions.keyDownOn(document.body, 9, null, 'Tab');
+          const event = new CustomEvent('focusin', {bubbles: true, composed: true});
+          event.relatedTarget = document.body;
+          details.dispatchEvent(event);
+
+          expect(spy).to.be.called;
+          // Should set focused attribute in any case
+          expect(details.hasAttribute('focused')).to.be.true;
+        });
+
+        it('should not delegate focus to summary element when not using keyboard navigation', () => {
+          const spy = sinon.spy(details.focusElement, 'focus');
+          // Simulate focus in into details, without pressing key
+          const event = new CustomEvent('focusin', {bubbles: true, composed: true});
+          event.relatedTarget = document.body;
+          details.dispatchEvent(event);
+
+          expect(spy).to.not.be.called;
+          // Should set focused attribute in any case
+          expect(details.hasAttribute('focused')).to.be.true;
+        });
+
+        it('should not delegate focus when shift-tabbing', () => {
+          const spy = sinon.spy(details.focusElement, 'focus');
+          // Simulate focus in into details, while Shift-Tabbing
+          MockInteractions.keyDownOn(details, 9, 'shift', 'Tab');
+          const event = new CustomEvent('focusin', {bubbles: true, composed: true});
+          event.relatedTarget = document.body;
+          details.dispatchEvent(event);
+
+          expect(spy).to.not.be.called;
+          // Should not set focused attribute
+          expect(details.hasAttribute('focused')).to.be.false;
         });
       });
     });

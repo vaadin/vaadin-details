@@ -143,6 +143,24 @@ This program is available under Apache License Version 2.0, available at https:/
           return this.shadowRoot.querySelector('[part="summary"]');
         }
 
+        /**
+         * Override logic from vaadin-control-state-mixin to only focus the summary element
+         * when using keyboard navigation. This avoids issues when clicking into the details,
+         * such as text selection and click events not working
+         * @override
+         * @protected
+         */
+        _focus() {
+          if (!this.focusElement || this._isShiftTabbing) {
+            return;
+          }
+
+          if (this._keyboardActive) {
+            this.focusElement.focus();
+          }
+          this._setFocused(true);
+        }
+
         ready() {
           super.ready();
           // prevent Shift + Tab on content from host blur
